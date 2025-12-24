@@ -21,7 +21,7 @@ export const GoogleAuthButton: React.FC<GoogleAuthButtonProps> = ({
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: "https://flowvahub-rewards.vercel.app/auth/callback",
+          redirectTo: "https://gzqvmvnfuowmhseguymx.supabase.co/auth/v1/callback",
         },
       });
 
