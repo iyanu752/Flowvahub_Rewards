@@ -1,6 +1,10 @@
 import { Menu } from 'lucide-react';
 
-export const TopNav = ({ onMenuClick }) => {
+interface TopNavProps {
+  onMenuClick: () => void;
+}
+
+export const TopNav: React.FC<TopNavProps> = ({ onMenuClick }) => {
   return (
     <header className="h-14 border-b border-gray-200 bg-white flex items-center px-4 md:hidden">
       <button
