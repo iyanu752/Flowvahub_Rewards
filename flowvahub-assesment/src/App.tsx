@@ -10,11 +10,16 @@ import {
 import Dashboard from './page/dashboard';
 import { RewardsPage } from './page/rewardPage';
 import { LockedPage } from './page/lockedPages';
+import AuthCallback from './page/authcallback';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AuthModal/>
+  },
+  {
+    path: "/auth/v1/callback",
+    element: <AuthCallback/>
   },
   {
     path: "/dashboard",
