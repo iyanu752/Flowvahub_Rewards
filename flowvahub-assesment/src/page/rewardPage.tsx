@@ -15,6 +15,7 @@ import { useNotifications } from '@/hooks/useNotification';
 import { useRewards } from '@/hooks/useRewards';
 import { useAuth } from '@/hooks/useAuth';
 import { useReclaimVerification } from '@/hooks/useReclaimVerification';
+import { toast } from 'react-toastify';
 
 export const RewardsPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'earn' | 'redeem'>('earn');
@@ -48,7 +49,6 @@ export const RewardsPage: React.FC = () => {
     checkIfAlreadyClaimed,
   } = useReclaimVerification(user?.id);
 
-  // Check if user already claimed on mount
   useEffect(() => {
     const checkClaimed = async () => {
       const claimed = await checkIfAlreadyClaimed();
@@ -81,7 +81,6 @@ export const RewardsPage: React.FC = () => {
   };
 
   const handleClaimPointsClick = () => {
-    // Open the verification modal
     setShowVerificationModal(true);
   };
 
@@ -93,11 +92,9 @@ export const RewardsPage: React.FC = () => {
       setHasClaimedReclaim(true);
       setShowSuccessModal(true);
       
-      // Optionally show a success notification
-      alert('✅ Verification submitted! Your 50 points have been added.');
+      toast.success(' Verification submitted! Your 50 points have been added.');
     } else {
-      // Show error message
-      alert(`❌ ${result.message}`);
+      toast.error(`❌ ${result.message}`);
     }
   };
 
@@ -236,7 +233,7 @@ export const RewardsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Notifications Panel */}
+   
       <NotificationsPanel
         isOpen={showNotifications}
         onClose={() => setShowNotifications(false)}
@@ -249,7 +246,7 @@ export const RewardsPage: React.FC = () => {
         deleteAll={deleteAll}
       />
 
-      {/* Reclaim Verification Modal */}
+  
       <ReclaimVerificationModal
         isOpen={showVerificationModal}
         onClose={() => setShowVerificationModal(false)}
@@ -257,7 +254,7 @@ export const RewardsPage: React.FC = () => {
         pointsReward={25}
       />
 
-      {/* Success Modal */}
+
       <StreakSuccessModal
         isOpen={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}

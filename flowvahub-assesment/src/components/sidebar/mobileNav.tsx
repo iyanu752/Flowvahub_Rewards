@@ -15,7 +15,6 @@ export const TopNav: React.FC<TopNavProps> = ({ onMenuClick }) => {
         <Menu className="w-6 h-6" />
       </button>
 
-      <span className="ml-3 font-semibold text-purple-600">Flowva</span>
     </header>
   );
 };

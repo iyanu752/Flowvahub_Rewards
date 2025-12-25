@@ -52,7 +52,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
 
   return (
     <div className="w-full space-y-6">
-      {/* Header */}
+     
       <div className="text-center">
         <h1 className="text-2xl text-[#6D28D9] font-bold mb-2">
           Log in to flowva
@@ -60,14 +60,12 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         <p className="text-gray-600">Log in to receive personalized recommendations</p>
       </div>
 
-      {/* Error Message */}
       {error && (
         <Alert variant="destructive">
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
-      {/* Form Fields */}
       <div className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email" className="text-sm font-medium text-gray-700">
@@ -110,12 +108,10 @@ export const LoginForm: React.FC<LoginFormProps> = ({
               )}
             </button>
           </div>
-          {/* {showPassword && (
-            <p className="text-xs text-purple-600">Show</p>
-          )} */}
+   
         </div>
 
-        {/* Forgot Password */}
+
         <div className="text-right">
           <button
             type="button"
@@ -141,7 +137,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         </Button>
       </div>
 
-      {/* Divider */}
+
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <div className="w-full border-t border-gray-300" />
@@ -151,14 +147,14 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         </div>
       </div>
 
-      {/* Google Auth */}
+
       <GoogleAuthButton
         loading={loading}
         onError={setError}
         onLoadingChange={setLoading}
       />
 
-      {/* Switch to Signup */}
+  
       <div className="text-center text-sm">
         <span className="text-gray-600">Don't have an account? </span>
         <button

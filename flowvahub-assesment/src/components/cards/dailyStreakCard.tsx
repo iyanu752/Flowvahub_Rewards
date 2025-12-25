@@ -34,7 +34,6 @@ export const DailyStreakCard: React.FC<DailyStreakCardProps> = ({
         {currentStreak} day{currentStreak !== 1 ? 's' : ''}
       </div>
 
-      {/* Week Days */}
       <div className="flex gap-2 mb-6 flex-1 items-center">
         {days.map((day, index) => {
           const isToday = index === todayIndex;
@@ -60,12 +59,11 @@ export const DailyStreakCard: React.FC<DailyStreakCardProps> = ({
         })}
       </div>
 
-      {/* Info */}
       <p className="text-sm text-gray-600 mb-4">
         Check in daily to earn +5 points
       </p>
 
-      {/* Claim Button */}
+
       <button
         onClick={onClaim}
         disabled={hasClaimed}

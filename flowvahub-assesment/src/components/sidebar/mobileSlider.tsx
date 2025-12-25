@@ -6,13 +6,13 @@ export const MobileSidebar = ({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <div className="fixed inset-0 z-50 flex md:hidden">
-      {/* Overlay */}
+
       <div
         className="absolute inset-0 bg-black/40"
         onClick={onClose}
       />
 
-      {/* Drawer */}
+  
       <div className="relative w-64 h-full bg-white shadow-xl transform transition-transform duration-300 ease-in-out">
         <button
           onClick={onClose}

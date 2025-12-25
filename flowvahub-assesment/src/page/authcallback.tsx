@@ -9,9 +9,7 @@ const AuthCallback: React.FC = () => {
   useEffect(() => {
     const handleAuth = async () => {
       try {
-        const { error } = await supabase.auth.exchangeCodeForSession(
-          window.location.search
-        );
+        const { data: { session }, error } = await supabase.auth.getSession();
 
         if (error) {
           console.error("OAuth callback error:", error.message);
@@ -20,7 +18,12 @@ const AuthCallback: React.FC = () => {
           return;
         }
 
-        navigate("/dashboard/rewards");
+        if (session) {
+          navigate("/dashboard/rewards");
+        } else {
+          setError("No session found");
+          setTimeout(() => navigate("/login"), 2000);
+        }
       } catch (err) {
         console.error("Unexpected error:", err);
         setError("An unexpected error occurred");

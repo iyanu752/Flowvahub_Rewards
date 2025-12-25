@@ -1,4 +1,3 @@
-// components/cards/featureToolCard.tsx
 import React from 'react';
 import { Users, Gift } from 'lucide-react';
 
@@ -23,7 +22,7 @@ export const FeaturedToolCard: React.FC<FeaturedToolCardProps> = ({
 }) => {
   return (
     <div className="w-full  h-full bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-      {/* Header Section with Gradient */}
+   
       <div className="bg-linear-to-r from-purple-600 via-purple-500 to-blue-400 p-6 relative flex-shrink-0">
         <span className="inline-block px-3 py-1 bg-white/30 backdrop-blur-sm rounded-full text-white text-xs font-medium mb-3">
           Featured
@@ -39,7 +38,7 @@ export const FeaturedToolCard: React.FC<FeaturedToolCardProps> = ({
             </h3>
           </div>
           
-          {/* Icon Circle */}
+ 
           <div className="w-16 h-16 bg-white/25 backdrop-blur-sm rounded-full flex items-center justify-center">
             <div className="flex flex-col gap-0.5">
               <div className="flex gap-1">
@@ -52,7 +51,7 @@ export const FeaturedToolCard: React.FC<FeaturedToolCardProps> = ({
         </div>
       </div>
       
-      {/* Content Section */}
+
       <div className="p-6 flex-1 flex flex-col">
         <div className="flex gap-3 mb-6 flex-1">
           <div className="shrink-0">
@@ -76,7 +75,7 @@ export const FeaturedToolCard: React.FC<FeaturedToolCardProps> = ({
           </div>
         </div>
         
-        {/* Action Buttons */}
+
         <div className="flex gap-3">
           <button 
             onClick={onSignup}

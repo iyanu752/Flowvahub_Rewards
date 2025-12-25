@@ -9,22 +9,21 @@ export default function Dashboard() {
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">
-      {/* Mobile Top Nav */}
+  
       <TopNav onMenuClick={() => setMobileMenuOpen(true)} />
 
       <div className="flex-1 flex overflow-hidden">
-        {/* Desktop Sidebar */}
+      
         <div className="hidden md:block">
           <Sidebar />
         </div>
 
-        {/* Mobile Sidebar */}
+      
         <MobileSidebar
           open={mobileMenuOpen}
           onClose={() => setMobileMenuOpen(false)}
         />
 
-        {/* Main Content - Router Outlet */}
         <main className="flex-1 overflow-auto">
           <Outlet />
         </main>

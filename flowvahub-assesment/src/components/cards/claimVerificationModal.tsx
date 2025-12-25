@@ -164,7 +164,6 @@ export const ReclaimVerificationModal: React.FC<ReclaimVerificationModalProps> =
             />
           </div>
 
-            {/* Screenshot Upload */}
           <div>
             <label className="block text-sm font-semibold text-gray-900 mb-2">
               Upload screenshot (mandatory)
